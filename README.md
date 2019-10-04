@@ -9,3 +9,4 @@ The code is tested using Pytorch 1.1.0 and openCV 3.4.1 under Windows 10 with Py
 2. Create a txt file, and write the annotations information into it in a way as below:
 
 
+
