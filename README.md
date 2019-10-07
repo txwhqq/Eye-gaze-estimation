@@ -6,9 +6,11 @@ The code is tested using Pytorch 1.1.0 and openCV 3.4.1 under Windows 10 with Py
 
 # Train a model
 1. Put all your training images in a folder.
-2. Create a txt file, and write the annotations information into it in a way as below:
+2. Create a txt file, and write the annotations information into it, the format is that an image name + a space + class of the image:
 
       ![](annotation.png)
+      
+3. 
 
 
 
