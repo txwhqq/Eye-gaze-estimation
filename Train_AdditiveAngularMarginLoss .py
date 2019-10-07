@@ -185,7 +185,7 @@ def main(args):
     total_step = len(train_loader)
     print(total_step)
 
-    print('所使用的GPU为: ',torch.cuda.current_device())
+    print('GPU ID: ',torch.cuda.current_device())
 
     tf_logger = Logger(args.logs_dir)
     j=0
