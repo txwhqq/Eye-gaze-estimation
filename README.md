@@ -1,5 +1,5 @@
 # Eye-gaze-estimation
-This is an eye-gaze-estimation algorithm that implemented by Pytorch. The project also uses the additive angular margin loss that proposed in this paper ["ArcFace: Additive Angular Margin Loss for Deep Face Recognition"](https://arxiv.org/abs/1801.07698), which acquires higher accuracy than that use Softmax Loss. What's more, we used a statistic method to detect eyes base on the face region obtained by face detection, and it has good performence in our project.
+This is an eye-gaze-estimation algorithm that proposed in the paper "A Novel Robotic Guidance System with Eye GazeTracking Control for Needle based Interventions" published in IEEE transaction ICAMechS. The project is implemented by PyTorch and it also uses the additive angular margin loss that proposed in this paper ["ArcFace: Additive Angular Margin Loss for Deep Face Recognition"](https://arxiv.org/abs/1801.07698), which acquires higher accuracy than that use Softmax Loss. What's more, we used a statistic method to detect eyes base on the face region obtained by face detection, and it has good performence in our project.
 
 ## Preparation
 The code is tested using PyTorch 1.1.0 and openCV 3.4.1 under Windows 10 with Python 3.7.  
