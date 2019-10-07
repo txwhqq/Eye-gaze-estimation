@@ -18,7 +18,7 @@ There are two training files(Train_SoftmaxLoss.py&Train_AdditiveAngularMarginLos
 Modify the Test.py to specify trained model, annotations file and the image path and then run this file to get test accuracy.
 
 # A demo
-A demo is provided here, it captures user's images by Kinect v2 and then user's face region is obtained through face detection. We use a statistic method base on the face region to detect eyes, finally, we put the eye regon into our model to get the eye gaze direction. Specifically, we apply cascade Adaboost method provided in openCV to detect faces. We assume that the functional relationship between eye position and the side length of face rigon is Y=θ∅, here, Y denotes the coordinates of eye area, θ is a coefficient matrix and ∅ is a vector that composed of side lenth of face rigon. We use the least squares method to fit the data to get the coefficient matrix θ. 
+A demo is provided here, it captures user's images by Kinect v2 and then user's face region is obtained through face detection. We use a statistic method base on the face region to detect eyes, finally, we put the eye regon into our model to get the eye gaze direction. Specifically, we apply cascade Adaboost method provided in openCV to detect faces. We assume that the functional relationship between eye position and the side length of face region is Y=θ∅, here, Y denotes the coordinates of eye area, θ is a coefficient matrix and ∅ is a vector that composed of side lenth of face region. We use the least squares method to fit the data to get the coefficient matrix θ. 
 
 
  
