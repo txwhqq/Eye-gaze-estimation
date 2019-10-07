@@ -11,11 +11,11 @@ There are two training files(Train_SoftmaxLoss.py&Train_AdditiveAngularMarginLos
 
      ![](annotation.png)
       
-3. Edit the learning_rate.txt file and the program will get the learning rates from this file during training.
+3. Edit the learning_rate.txt file so that the program can get the learning rates from this file during training.
 4. Specify the default options in parse_arguments function of training file and run the file.
 
 # Test the model
-Modify the Test.py to specify trained model, annotations file and the image path and then run this file to get the accuracy.
+Modify the Test.py to specify trained model, annotations file and the image path and then run this file to get test accuracy.
 
 
 
