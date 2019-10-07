@@ -76,7 +76,7 @@ class EyeDirection(data.Dataset):
         img = np.atleast_3d(img).transpose(2,0,1).astype(np.float32)
         
 
-        #数据归一化
+        
         mean = np.mean(img)
         std = np.std(img)
         std_adj = np.maximum(std,1.0/np.sqrt(img.size))
@@ -84,7 +84,7 @@ class EyeDirection(data.Dataset):
         img = torch.from_numpy(img)
         #print(img.dtype)
         #img = img.reshape(-1,160,160,3)
-        #将label ont_hot化
+        #label ont_hot
         
         #label1 = torch.randn(1,5)
         #label = label1==label1[0,int(label)]
@@ -105,10 +105,10 @@ class FeatureExract(nn.Module):
     def __init__(self,num_classes):
 
         super(FeatureExract,self).__init__()
-        resnet = models.resnet18(pretrained=True)   #使用resnet18作为特征提取的网络
-        modules = list(resnet.children())[:-1]      #删除最后的全连接层
+        resnet = models.resnet18(pretrained=True)   
+        modules = list(resnet.children())[:-1]      
         self.resnet = nn.Sequential(*modules)
-        self.linear = nn.Linear(resnet.fc.in_features,num_classes,bias=True)  #不要偏置项
+        self.linear = nn.Linear(resnet.fc.in_features,num_classes,bias=True)  
         #torch.nn.Dropout(0.5)
 
         
