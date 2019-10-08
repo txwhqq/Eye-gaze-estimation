@@ -4,8 +4,6 @@ import cv2
 
 import argparse
 
-import facenet 
-
 import scipy.misc
 from socket import *
 
@@ -26,6 +24,12 @@ data1 = 'w'
 
 device = torch.device('cuda:0')
 
+def prewhiten(x):
+    mean = np.mean(x)
+    std = np.std(x)
+    std_adj = np.maximum(std, 1.0/np.sqrt(x.size))
+    y = np.multiply(np.subtract(x, mean), 1/std_adj)
+    return y  
 
 class FeatureExract(nn.Module):
     def __init__(self,num_classes):
@@ -96,7 +100,7 @@ with torch.no_grad():
                     #image1 = scipy.misc.imresize(cropImg,144,52)
                     #scipy.misc.imsave('F:\\Gaze_estimator\\cam_eyedetection\\'+str(num)+'.jpg',image1)
                     #image1 = scipy.misc.imresize(cropImg, (image_size, image_size), interp='bilinear')
-                    image2 = facenet.prewhiten(image1)
+                    image2 = prewhiten(image1)
                     image2 = image2.astype(np.float32)
                     image2 = image2.reshape(-1,3,52,244)
                     image2 = torch.from_numpy(image2)
@@ -111,13 +115,13 @@ with torch.no_grad():
                     #img3 = image2.reshape(-1,image_size,image_size,3)
                     #print(img3.shape)
         #               print(image2.shape)
-                    data1 = argmax+1
-                    if data1 ==1:
-                        data1 = 'a'
-                    elif data1 ==2:
-                        data1 = 's'
-                    else:
-                        data1 = 'd'
+                    #data1 = argmax+1
+                    #if data1 ==1:
+                     #   data1 = 'a'
+                    #elif data1 ==2:
+                     #   data1 = 's'
+                    #else:
+                     #   data1 = 'd'
                     #tcpCliSock.send(data1.encode())
                     #data1 = tcpCliSock.recv(BUFSIZ)
                     
