@@ -1,5 +1,5 @@
 # Eye-gaze-estimation
-This is an eye-gaze-estimation algorithm that proposed in the paper "A Novel Robotic Guidance System with Eye GazeTracking Control for Needle based Interventions" which has been submitted to IEEE Transactions on Cognitive and Developmental Systems. The project is implemented by PyTorch and it also uses the additive angular margin loss that proposed in this paper ["ArcFace: Additive Angular Margin Loss for Deep Face Recognition"](https://arxiv.org/abs/1801.07698), which acquires higher accuracy than that use Softmax Loss. What's more, we used a statistic method to detect eyes base on the face region obtained by face detection, and it has good performence in our project.
+This is an eye-gaze-estimation algorithm that proposed in the paper "A Novel Robotic Guidance System with Eye GazeTracking Control for Needle based Interventions" which has been submitted to IEEE Transactions on Cognitive and Developmental Systems. The project is implemented by PyTorch and it also uses the additive angular margin loss that proposed in this paper ["ArcFace: Additive Angular Margin Loss for Deep Face Recognition"](https://arxiv.org/abs/1801.07698), which acquires higher accuracy than that use Softmax Loss. What's more, we used a statistic method to detect eyes base on the face region obtained by face detection, and it has good performence in our project. If you has any question, please don't hesitate to contact me at qiuqingtxwh@outlook.com.
 
 ## Preparation
 The code is tested using PyTorch 1.1.0 and openCV 3.4.1 under Windows 10 with Python 3.7.  
@@ -18,7 +18,8 @@ There are two training files(Train_SoftmaxLoss.py&Train_AdditiveAngularMarginLos
 Modify the Test.py to specify trained model, annotations file and the image path and then run this file to get test accuracy.
 
 ## A demo
-A demo is provided here, it captures user's images by Kinect v2 and then user's face region is obtained through face detection. We use a statistic method base on the face region to detect eyes, finally, we put the eye region into our model to get the eye gaze direction. Specifically, we apply cascade Adaboost method provided in openCV to detect faces. We assume that the functional relationship between eye position and the side length of face region is Y=θ∅, here, Y denotes the coordinates of eye area, θ is a coefficient matrix and ∅ is a vector that composed of side lenth of face region. We use the least squares method to fit the data to get the coefficient matrix θ, so that we can detect eyes.
+A demo is provided in this project, it captures user's images by Kinect v2 and then user's face region is obtained through face detection. We use a statistic method base on the face region to detect eyes, finally, we put the eye region into our model to get the eye gaze direction. Specifically, we apply cascade Adaboost method provided in openCV to detect faces. We assume that the functional relationship between eye position and the side length of face region is Y=θ∅, here, Y denotes the coordinates of eye area, θ is a coefficient matrix and ∅ is a vector that composed of side lenth of face region. We use the least squares method to fit the data to get the coefficient matrix θ, so that we can detect eyes.
+
 
 
  
