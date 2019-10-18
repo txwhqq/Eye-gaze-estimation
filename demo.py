@@ -90,7 +90,7 @@ with torch.no_grad():
                     eye_y1 = face_y+int(rect[0][2])
                     eye_y2 = face_y+int(rect[0][3])
                     cropImg = img[eye_y1:eye_y2,eye_x1:eye_x2]
-                    cropImg = cv2.resize(cropImg,(244,52))
+                    cropImg = cv2.resize(cropImg,(144,52))
                     #cv2.rectangle(img,(face_x+int(rect[0][0]),face_y+int(rect[0][2])),(face_x+int(rect[0][1]),face_y+int(rect[0][3])),(0,255,0),2)
                     #cv2.imwrite('F:\\Gaze_estimator\\cam_eyedetection\\'+str(num)+'.jpg',cropImg)
                     num=num+1
@@ -102,7 +102,7 @@ with torch.no_grad():
                     #image1 = scipy.misc.imresize(cropImg, (image_size, image_size), interp='bilinear')
                     image2 = prewhiten(image1)
                     image2 = image2.astype(np.float32)
-                    image2 = image2.reshape(-1,3,52,244)
+                    image2 = image2.reshape(-1,3,52,144)
                     image2 = torch.from_numpy(image2)
                     image2 = image2.to(device)
                     
